@@ -28,9 +28,9 @@ function confirmPair() {
   isPair ? immobilizeCards() : unflipCards();
   isPair ? successScore += 1 : failureScore += 1
   if(successScore === 9) { setTimeout(() => {
-    window.alert(`Congratulations ${name}, you have completed the game! Let's play again.`)
+    window.alert(`Congratulations ${name}, you have completed the game!`)
     }, 900)
-    resetTable()
+    // resetTable()
   };
 }
 
@@ -70,18 +70,19 @@ function updateScore() {
   failureScoreConst.textContent = `Failures: ${failureScore}`;
 }
 
-function resetTable(){
-  unflipCards()
-/*   flippedCard = false;
+/* function resetTable(){
+  firstCard = null;
+  secondCard = null;
   lockTable = false;
-  firstCard, secondCard;
+  unflipCards()
+  flippedCard = false;
   successScore = 0;
   failureScore = 0;
   cards.forEach(card => card.removeEventListener('click', flipCard));
   cards.forEach(card => card.removeEventListener('click', (event) => {
     updateScore();
-  })) */
-}
+  }));
+} */
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 cards.forEach(card => card.addEventListener('click', (event) => {
@@ -95,6 +96,15 @@ const request = async () => {
 }
 
 request();
+
+/* var animals = ["https://cloud.modyocdn.com/uploads/4a1b66ba-ba4e-438d-be40-d9960818e06a/original/bear.jpg", "https://cloud.modyocdn.com/uploads/651e2381-dc33-43fc-8762-58079ffb36d1/original/bird.jpg"];
+const up_face = document.querySelector(".up-face")
+animals.map((animal) => {
+  var img = document.createElement("img");
+  img.src = animal;
+  up_face.appendChild(img);
+  up_face.innerHTML += `<br/>`;
+}) */
 
 /* var obj = {
   "entries": [
