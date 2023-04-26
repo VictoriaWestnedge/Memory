@@ -1,5 +1,5 @@
 const cards = document.querySelectorAll(".memory-card");
-// const choices = document.querySelectorAll('.choice');
+var name = prompt("Hello! Welcome to the Memory Game. What is your name?")
 
 let flippedCard = false;
 let lockTable = false;
@@ -27,6 +27,11 @@ function confirmPair() {
   let isPair = firstCard.dataset.name === secondCard.dataset.name;
   isPair ? immobilizeCards() : unflipCards();
   isPair ? successScore += 1 : failureScore += 1
+  if(successScore === 9) { setTimeout(() => {
+    window.alert(`Congratulations ${name}, you have completed the game! Let's play again.`)
+    }, 900)
+    resetTable()
+  };
 }
 
 function immobilizeCards() {
@@ -63,6 +68,19 @@ function updateScore() {
 
   successScoreConst.textContent = `Successes: ${successScore}`;
   failureScoreConst.textContent = `Failures: ${failureScore}`;
+}
+
+function resetTable(){
+  unflipCards()
+/*   flippedCard = false;
+  lockTable = false;
+  firstCard, secondCard;
+  successScore = 0;
+  failureScore = 0;
+  cards.forEach(card => card.removeEventListener('click', flipCard));
+  cards.forEach(card => card.removeEventListener('click', (event) => {
+    updateScore();
+  })) */
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
