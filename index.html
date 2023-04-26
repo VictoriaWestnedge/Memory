@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory Game</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="container m-5">
+    <div class="h1 text-white mb-3 text-center">Memory Card Game by Victoria Westnedge</div>
+      <div class="div m-5 pt-2 bg-light rounded">
+       <h3 class="scoreHeading text-secondary text-center" id="scoreHeading">Score</h3>
+      <div id="scores" class="score text-secondary text-center p-2">
+        <h4 id="successScore">Successes: 0</h4>
+        <h4 id="failureScore">Failures: 0</h4>
+      </div>
+    <section class="memory-table w-100">
+      <div class="memory-card" data-name="bear">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="bear"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="bear">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="bear"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="bird">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="bird"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="bird">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="bird"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="cat">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="cat"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="cat">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="cat"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="deer">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="deer"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="deer">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="deer"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="dog">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="dog"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="dog">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="dog"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="dolphin">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="dolphin"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="dolphin">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="dolphin"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="fish">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="fish"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="fish">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="fish"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="fox">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="fox"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="fox">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="fox"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="frog">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="frog"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card" data-name="frog">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="frog"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <!-- <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="lion"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="lion"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="monkey"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="monkey"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="mouse"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="mouse"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="penguin"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="penguin"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="rabbit"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="rabbit"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="seal"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="seal"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="squirrel"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="squirrel"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="tiger"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="tiger"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="turtle"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="turtle"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="wild-pig"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="wild-pig"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div> -->
+  <!--     <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="zebra"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div>
+      <div class="memory-card">
+        <img class="up-face" src="https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20" alt="zebra"/>
+        <img class="down-face" src="assets/images/memory.jpg" alt="brain"/>
+      </div> -->
+    </section>
+   </div>
+  </div>
+</div>
+  <script src="assets/js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
