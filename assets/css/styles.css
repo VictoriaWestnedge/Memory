@@ -17,11 +17,11 @@ body {
 }
 
 .memory-card {
-  width: 15.667%;
+  width: 15%;
   height: 31.33%;
+  margin: 10px;
   position: relative;
   border-radius: 5px;
-  margin: 5px;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.6s;

@@ -89,13 +89,19 @@ cards.forEach(card => card.addEventListener('click', (event) => {
   updateScore();
 }));
 
-const request = async () => {
+const request = async (index) => {
   const response = await fetch('https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20');
   const json = await response.json();
-  console.log(json.entries[0]["fields"]["image"].url);
+  let imageLink = (json.entries[index]["fields"]["image"].url);
+  console.log(imageLink)
+  const animalTag = `<li class="list-inline-item">
+  <img src="${imageLink}" alt="">
+  </li>`
+  insertAdjacentHTML("beforeend", animalTag)
 }
 
-request();
+request(1);
+
 
 /* var animals = ["https://cloud.modyocdn.com/uploads/4a1b66ba-ba4e-438d-be40-d9960818e06a/original/bear.jpg", "https://cloud.modyocdn.com/uploads/651e2381-dc33-43fc-8762-58079ffb36d1/original/bird.jpg"];
 const up_face = document.querySelector(".up-face")
