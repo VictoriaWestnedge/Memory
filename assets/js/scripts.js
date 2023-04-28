@@ -1,6 +1,5 @@
-const cards = document.querySelectorAll(".memory-card");
-
 var name = prompt("Hello! Welcome to the Memory Game. What is your name?")
+const cards = document.querySelectorAll(".memory-card");
 
 let flippedCard = false;
 let lockTable = false;
@@ -25,7 +24,6 @@ function flipCard() {
     confirmPair();
     let animalImageSecond = secondCard.dataset.name
     showImage(animalImageSecond);
-
   }
 }
 
@@ -36,7 +34,6 @@ function confirmPair() {
   if(successScore === 9) { setTimeout(() => {
     window.alert(`Congratulations ${name}, you have completed the game!`)
     }, 900)
-    // resetTable()
   };
 }
 
@@ -76,20 +73,6 @@ function updateScore() {
   failureScoreConst.textContent = `Failures: ${failureScore}`;
 }
 
-/* function resetTable(){
-  firstCard = null;
-  secondCard = null;
-  lockTable = false;
-  unflipCards()
-  flippedCard = false;
-  successScore = 0;
-  failureScore = 0;
-  cards.forEach(card => card.removeEventListener('click', flipCard));
-  cards.forEach(card => card.removeEventListener('click', (event) => {
-    updateScore();
-  }));
-} */
-
 cards.forEach(card => card.addEventListener('click', flipCard));
 cards.forEach(card => card.addEventListener('click', (event) => {
   updateScore();
@@ -114,12 +97,7 @@ const request =  async () => {
     let imageLink = (json.entries[index]["fields"]["image"].url);
     let imageName = (json.entries[index]["meta"].name);
     animalArray.push({"animalName": imageName, "animalUrl": imageLink})
-    // animalTagArray["tag"] = `<img class="up-face" src="${imageLink}"/>`
-    // animalTag = `<img class="up-face" src="${imageLink}"/>`
-    // animalTagArray.push(animalTag)
-    // animalTagArray.forEach(imageCard => animalCard.insertAdjacentHTML("beforeend", imageCard))
   }
-  // console.log(animalArray)
 }
 
 request()
