@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll(".memory-card");
+
 var name = prompt("Hello! Welcome to the Memory Game. What is your name?")
 
 let flippedCard = false;
@@ -16,10 +17,15 @@ function flipCard() {
   if(!flippedCard) {
     flippedCard = true;
     firstCard = this;
+    let animalImageFirst = firstCard.dataset.name
+    console.log(showImage(animalImageFirst));
+
   } else {
     secondCard = this;
-
     confirmPair();
+    let animalImageSecond = secondCard.dataset.name
+    // showImage(animalImageSecond);
+
   }
 }
 
@@ -90,52 +96,30 @@ cards.forEach(card => card.addEventListener('click', (event) => {
 }));
 
 const animalCard = document.querySelector(".memory-card")
-// console.log(animalCard)
-const request =  async (index) => {
+
+function showImage (animalTagName) {
+  const searchAnimal = animalArray.find(animal => {
+    if (animal.animalName == animalTagName) {
+      let animalTag = `<img class="up-face" src="${animal.animalUrl}"/>`
+      animalCard.insertAdjacentHTML("beforeend", animalTag)
+    }
+  })
+};
+
+const request =  async () => {
+  this.animalArray = []
+  for (let index = 0; index < 9; index++) {
     const response = await fetch('https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20');
     const json = await response.json();
     let imageLink = (json.entries[index]["fields"]["image"].url);
-    // console.log(imageLink)
-    const animalTag = `<img class="up-face" src="${imageLink}" alt="bear"/>`
-    animalCard.insertAdjacentHTML("beforeend", animalTag)
+    let imageName = (json.entries[index]["meta"].name);
+    animalArray.push({"animalName": imageName, "animalUrl": imageLink})
+    // animalTagArray["tag"] = `<img class="up-face" src="${imageLink}"/>`
+    // animalTag = `<img class="up-face" src="${imageLink}"/>`
+    // animalTagArray.push(animalTag)
+    // animalTagArray.forEach(imageCard => animalCard.insertAdjacentHTML("beforeend", imageCard))
   }
-
-request(0);
-
-
-/* var animals = ["https://cloud.modyocdn.com/uploads/4a1b66ba-ba4e-438d-be40-d9960818e06a/original/bear.jpg", "https://cloud.modyocdn.com/uploads/651e2381-dc33-43fc-8762-58079ffb36d1/original/bird.jpg"];
-const up_face = document.querySelector(".up-face")
-animals.map((animal) => {
-  var img = document.createElement("img");
-  img.src = animal;
-  up_face.appendChild(img);
-  up_face.innerHTML += `<br/>`;
-}) */
-
-/* var obj = {
-  "entries": [
-  {
-    "meta": {
-      "name": "bear"
-    },
-      "fields": {
-        "image": {
-          "url": "https://cloud.modyocdn.com/uploads/4a1b66ba-ba4e-438d-be40-d9960818e06a/original/bear.jpg"
-        }
-      }
-    }
-  ]
+  // console.log(animalArray)
 }
-console.log(obj.entries[0]["meta"].name);
-console.log(obj.entries[0]["fields"].image.url);
 
-const call = (input) => {
-  return new Promise((resolve, reject) => {
-    return resolve({
-      val: input,
-    });
-  });
-};
-
-call(obj.entries[0]["fields"].image.url)
-  .then((res) => console.log(res.val)); */
+request()
