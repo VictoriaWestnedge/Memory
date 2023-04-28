@@ -18,13 +18,13 @@ function flipCard() {
     flippedCard = true;
     firstCard = this;
     let animalImageFirst = firstCard.dataset.name
-    console.log(showImage(animalImageFirst));
+    showImage(animalImageFirst);
 
   } else {
     secondCard = this;
     confirmPair();
     let animalImageSecond = secondCard.dataset.name
-    // showImage(animalImageSecond);
+    showImage(animalImageSecond);
 
   }
 }
