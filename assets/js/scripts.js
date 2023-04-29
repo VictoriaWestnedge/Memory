@@ -17,13 +17,17 @@ function flipCard() {
     flippedCard = true;
     firstCard = this;
     let animalImageFirst = firstCard.dataset.name
-    showImage(animalImageFirst);
+    let url = showImage(animalImageFirst);
+    animalCard = this;
+    animalCard.insertAdjacentHTML("beforeend", url)
 
   } else {
     secondCard = this;
     confirmPair();
     let animalImageSecond = secondCard.dataset.name
-    showImage(animalImageSecond);
+    let url = showImage(animalImageSecond);
+    animalCard = this;
+    animalCard.insertAdjacentHTML("beforeend", url)
   }
 }
 
@@ -79,13 +83,14 @@ cards.forEach(card => card.addEventListener('click', (event) => {
 }));
 
 function showImage (animalTagName) {
+  let animalTag = '';
   const animalCard = document.querySelector(`[data-name=${animalTagName}]`)
   const searchAnimal = animalArray.find(animal => {
     if (animal.animalName == animalTagName) {
-      let animalTag = `<img class="up-face" src="${animal.animalUrl}"/>`
-      animalCard.insertAdjacentHTML("beforeend", animalTag)
+      animalTag = `<img class="up-face" src="${animal.animalUrl}"/>`
     }
   })
+  return animalTag;
 };
 
 const request =  async () => {
