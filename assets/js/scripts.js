@@ -78,9 +78,8 @@ cards.forEach(card => card.addEventListener('click', (event) => {
   updateScore();
 }));
 
-const animalCard = document.querySelector(".memory-card")
-
 function showImage (animalTagName) {
+  const animalCard = document.querySelector(`[data-name=${animalTagName}]`)
   const searchAnimal = animalArray.find(animal => {
     if (animal.animalName == animalTagName) {
       let animalTag = `<img class="up-face" src="${animal.animalUrl}"/>`
